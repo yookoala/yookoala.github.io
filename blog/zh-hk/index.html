@@ -27,7 +27,7 @@ permalink: /zh-hk/
         </h1>
       </header>
 
-      <p>{{ post.content | strip_html | truncatewords: 56 }} <a href="{{ post.url | prepend: site.baseurl }}" title="Permalink to: {{ post.title }}" class="read-more">閱讀全文</a></p>
+      <p>{{ post.content | strip_html | truncatewords: 56 }} <a href="{{ post.url | prepend: site.baseurl }}" title="「{{ post.title }}」的永久連結" class="read-more">閱讀全文</a></p>
     </article>
   {% endfor %}
 
