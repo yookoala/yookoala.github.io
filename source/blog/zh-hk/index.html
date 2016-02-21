@@ -1,30 +1,33 @@
 ---
 layout: default
-title: Blog
-subtitle: what I'm writing..
+title: 網誌
+subtitle: Web 技工雜記
+lang: zh-hk
+permalink: /zh-hk/
 ---
 
 <section class="post-list">
 
   <header class="post-header intro">
     <div class="intro-in">
-      <h1 class="post-title">{{ page.title }}</h1>
+      <h1 class="post-title">{{ page.title }} | {{ site.title }}</h1>
       {% if page.subtitle %}
         <h2 class="intro-subtitle">{{ page.subtitle }}</h2>
       {% endif %}
     </div>
   </header>
 
-  {% for post in site.posts %}
+  {% assign posts=site.posts | where:"lang", page.lang %}
+  {% for post in posts %}
     <article class="post-item container">
       <header>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-meta">{{ post.date | date: "%Y 年 %m 月 %d 日" }}</span>
         <h1 class="post-title">
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h1>
       </header>
 
-      <p>{{ post.content | strip_html | truncatewords: 56 }} <a href="{{ post.url | prepend: site.baseurl }}" title="Permalink to: {{ post.title }}" class="read-more">Read more</a></p>
+      <p>{{ post.content | strip_html | truncatewords: 56 }} <a href="{{ post.url | prepend: site.baseurl }}" title="Permalink to: {{ post.title }}" class="read-more">閱讀全文</a></p>
     </article>
   {% endfor %}
 
