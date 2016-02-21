@@ -5,7 +5,6 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
-source: source
 destination: _site
 sass:
   sass_dir: _sass
@@ -81,3 +80,5 @@ defaults:
       lang: zh-hk
       date_format: "%Y 年 %m 月 %d 日"
       permalink   : /zh-hk/:title/:year:month:day/
+
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'README.md', 'travisGemfile']
